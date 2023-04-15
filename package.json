@@ -1,0 +1,15 @@
+{
+  "name": "homer-nite-coding",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "serve": "vite preview"
+  },
+  "dependencies": {
+    "phaser": "^3.55.2"
+  },
+  "devDependencies": {
+    "typescript": "^5.0.4",
+    "vite": "^4.2.1"
+  }
+}
