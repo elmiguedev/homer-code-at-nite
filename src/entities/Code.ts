@@ -200,7 +200,7 @@ export class Code {
         this.codeTimerLine.height
       );
       this.codeTimerLine.setPosition(
-        this.x + 17 - this.txtSelectedCode.width / 2,
+        this.x,
         this.y - 10 - this.txtSelectedCode.height / 2,
       )
 

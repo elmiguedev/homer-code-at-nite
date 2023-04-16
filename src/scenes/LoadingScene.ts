@@ -1,24 +1,4 @@
 import { Scene } from "phaser";
-import chanchoPng from "../assets/img/chancho/chancho.png";
-import examplePng from "../assets/img/example.png";
-import tickPng from "../assets/img/tick.png";
-import backgroundPng from "../assets/img/background.png";
-import homerOkPng from "../assets/img/homer_ok.png";
-import homerCodingPng from "../assets/img/homer_coding.png";
-import homerBadPng from "../assets/img/homer_bad.png";
-import savePng from "../assets/img/save.png";
-
-import avrilMp3 from "../assets/sounds/avril.mp3";
-import batmanMp3 from "../assets/sounds/batman.mp3";
-import blinkMp3 from "../assets/sounds/blink.mp3";
-import kornMp3 from "../assets/sounds/korn.mp3";
-import lpMp3 from "../assets/sounds/lp.mp3";
-import paparoachMp3 from "../assets/sounds/paparoach.mp3";
-import pokemonMp3 from "../assets/sounds/pokemon.mp3";
-import keyboardMp3 from "../assets/sounds/keyboard.mp3";
-import saveWav from "../assets/sounds/save.wav";
-import breakWav from "../assets/sounds/break.wav";
-import commitWav from "../assets/sounds/commit.wav";
 
 export class LoadingScene extends Scene {
 
@@ -60,7 +40,7 @@ export class LoadingScene extends Scene {
     const x = this.game.canvas.width / 2;
     const y = this.game.canvas.height / 2 + 300;
     const progressBarBackground = this.add.rectangle(x, y, 340, 80, 0xFFFFFF, 0.1);
-    this.progressBar = this.add.rectangle(x - 150, y, 0, 40, 0xFFFFFF, 0.5);
+    this.progressBar = this.add.rectangle(x, y, 0, 40, 0xFFFFFF, 0.5);
   }
 
   createProgressText() {
@@ -77,45 +57,43 @@ export class LoadingScene extends Scene {
       this.createChancho();
       this.createProgressBar();
       this.loadAssetsGame();
-      // this.load.start();
     })
   }
 
   loadAssetsGame() {
 
 
-    this.load.image("example", examplePng)
-    this.load.image("tick", tickPng)
-    this.load.image("background", backgroundPng)
-    this.load.image("homer_ok", homerOkPng)
-    this.load.image("homer_coding", homerCodingPng)
-    this.load.image("homer_bad", homerBadPng)
-    this.load.image("save", savePng)
+    this.load.image("example", "assets/img/example.png")
+    this.load.image("tick", "assets/img/tick.png")
+    this.load.image("background", "assets/img/background.png")
+    this.load.image("homer_ok", "assets/img/homer_ok.png")
+    this.load.image("homer_coding", "assets/img/homer_coding.png")
+    this.load.image("homer_bad", "assets/img/homer_bad.png")
+    this.load.image("save", "assets/img/save.png")
 
-    this.load.audio("avril", avrilMp3);
-    this.load.audio("batman", batmanMp3);
-    this.load.audio("blink", blinkMp3);
-    this.load.audio("korn", kornMp3);
-    this.load.audio("lp", lpMp3);
-    this.load.audio("paparoach", paparoachMp3);
-    this.load.audio("pokemon", pokemonMp3);
+    this.load.audio("avril", "assets/sounds/avril.mp3");
+    this.load.audio("batman", "assets/sounds/batman.mp3");
+    this.load.audio("blink", "assets/sounds/blink.mp3");
+    this.load.audio("korn", "assets/sounds/korn.mp3");
+    this.load.audio("lp", "assets/sounds/lp.mp3");
+    this.load.audio("paparoach", "assets/sounds/paparoach.mp3");
+    this.load.audio("pokemon", "assets/sounds/pokemon.mp3");
 
-    this.load.audio("keyboard", keyboardMp3);
-    this.load.audio("save", saveWav);
-    this.load.audio("break", breakWav);
-    this.load.audio("commit", commitWav);
+    this.load.audio("keyboard", "assets/sounds/keyboard.mp3");
+    this.load.audio("save", "assets/sounds/save.wav");
+    this.load.audio("break", "assets/sounds/break.wav");
+    this.load.audio("commit", "assets/sounds/commit.wav");
 
     this.load.start();
 
     this.load.on("progress", (value: any) => {
-      console.log(value)
       this.progressBar.setSize(300 * value, 40);
     });
 
     this.load.on("fileprogress", (file: any) => {
       if (file.src.includes("sounds")) this.progressText.setText("cargando audios");
       else if (file.src.includes("img")) this.progressText.setText("cargando imagenes");
-      else this.progressText.setText("finalizando recursos");
+      else this.progressText.setText("cargando recursos");
 
     });
 
@@ -125,7 +103,7 @@ export class LoadingScene extends Scene {
   }
 
   loadAssetsLoading() {
-    this.load.spritesheet("chancho", chanchoPng, {
+    this.load.spritesheet("chancho", "assets/img/chancho.png", {
       frameWidth: 512,
       frameHeight: 512
     })
