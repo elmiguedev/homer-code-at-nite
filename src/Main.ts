@@ -3,6 +3,7 @@ import { MainScene } from './scenes/MainScene';
 import { StartScene } from './scenes/StartScene';
 import { GameOverScene } from './scenes/GameOverScene';
 import { LoadingScene } from './scenes/LoadingScene';
+import { InstructionsScene } from './scenes/InstructionsScene';
 
 const config: Phaser.Types.Core.GameConfig = {
   type: Phaser.AUTO,
@@ -22,6 +23,7 @@ const config: Phaser.Types.Core.GameConfig = {
   scene: [
     LoadingScene,
     StartScene,
+    InstructionsScene,
     MainScene,
     GameOverScene
   ]
