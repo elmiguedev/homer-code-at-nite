@@ -7,9 +7,8 @@ export class Code {
     'let a = 5;',
     'const b = 2;',
     'if (a > b) {}',
-    'for (let i = 0; i < 10; i++) {}',
-    'const arr = [1, 2, 3];',
-    'let i = 0; while (i < 5) {}',
+    'const arr = [1,2,3];',
+    'let i = 0;',
     'const num = 3.14;',
     'let x;',
     'let y = null;',
@@ -19,8 +18,7 @@ export class Code {
     'const date = new Date();',
     'const arr = ["red"];',
     'let i = arr.indexOf("green");',
-    'const result = 10 * 5;',
-    'const num2 = Math.round(2.5);',
+    'const result = 10;',
     'const random = Math.random();',
     'let y = null;',
     'let z = undefined;',
@@ -34,11 +32,9 @@ export class Code {
     'const max = 100;',
     'const min = -100;',
     'const sum = (a, b) => a + b;',
-    'const multiply = (a, b) => a * b;',
-    'const arrLength = arr.length;',
+    'const len = arr.length;',
     'const last = arr.pop();',
     'const str = "hello";',
-    'const arr = [1, 2, 3];'
   ];
 
 
